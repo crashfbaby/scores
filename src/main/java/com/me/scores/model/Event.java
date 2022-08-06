@@ -1,4 +1,4 @@
 package com.me.scores.model;
 
-public class Schedule {
+public class Event {
 }

@@ -10,5 +10,10 @@ public class Team {
 
     private String name;
 
+    private String mascot;
+
+    private String primaryColor;
+
+    private String secondaryColor;
 
 }

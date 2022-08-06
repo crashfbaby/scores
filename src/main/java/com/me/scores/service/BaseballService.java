@@ -1,15 +1,11 @@
 package com.me.scores.service;
 
 import com.me.scores.client.MLBClient;
-import com.me.scores.model.Game;
-import com.me.scores.model.Schedule;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.me.scores.model.mlb.Schedule;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Service
 public class BaseballService {

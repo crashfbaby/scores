@@ -1,25 +1,6 @@
-Download Spring Boot Starter
-Hello World
-Git
-Get Response
-Get MLB Score for team
-Get List of multiple teams
-Iterate over scores
-Multiple sports
-Multiple leagues
-UI
-	- Assets
-	- Basic plate
-	- Transitions
 
 
-JSON Structure
-[teams]
-	[away]
-		[team]
-			[name]
-			[abbreviation]
-		[teamStats]
-			[runs]	
-	[home]
-		...	
+A pass on access mods
+
+
+

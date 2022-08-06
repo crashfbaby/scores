@@ -1,4 +1,6 @@
-package com.me.scores.model;
+package com.me.scores.model.mlb;
+
+import com.me.scores.model.Game;
 
 public class BaseballGame extends Game {
 

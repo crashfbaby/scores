@@ -1,11 +1,12 @@
 JSON Structure
 
-    [teams]
-        [away]
-            [team]
-                [name]
-                [abbreviation]
-            [teamStats]
-                [runs]
-        [home]
-            ...	
+
+
+
+
+
+
+
+Coding Standards
+
+Lists should be named singular nouns with the noun list appended e.g.: ArrayList<Object> = ObjectList 

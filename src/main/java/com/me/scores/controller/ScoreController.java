@@ -1,21 +1,12 @@
 package com.me.scores.controller;
 
 import com.me.scores.entity.ScoreRequest;
-import com.me.scores.model.Schedule;
+import com.me.scores.model.mlb.Schedule;
 import com.me.scores.service.ScoreService;
-import io.netty.handler.codec.http.HttpResponse;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.core.io.buffer.DataBufferUtils;
-import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.nio.charset.Charset;
 
 
 @Controller
