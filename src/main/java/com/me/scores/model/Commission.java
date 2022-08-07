@@ -1,8 +1,13 @@
 package com.me.scores.model;
 
+import lombok.Data;
+
+import java.util.List;
+
+@Data
 public abstract class Commission {
 
-    private String name;
+    private Person commissioner;
+    private List<League> leagueList;
 
-    private Commissioner
 }

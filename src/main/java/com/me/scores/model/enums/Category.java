@@ -1,4 +1,4 @@
-package com.me.scores.model.mlb.enums;
+package com.me.scores.model.enums;
 
 public enum Category {
     INDOOR,

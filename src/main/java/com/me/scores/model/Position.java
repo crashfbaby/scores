@@ -1,11 +1,15 @@
 package com.me.scores.model;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class Position {
 
-    private String name;
+    private Position name;
 
     // e.g. my ROLES as Commissioner
+    // infield, outfield
     private List<Role> roleList;
 }

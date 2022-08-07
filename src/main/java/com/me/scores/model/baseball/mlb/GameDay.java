@@ -1,5 +1,6 @@
-package com.me.scores.model.mlb;
+package com.me.scores.model.baseball.mlb;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.me.scores.model.Event;
 import com.me.scores.model.Game;
 import lombok.Data;
@@ -10,7 +11,7 @@ import java.util.List;
 @Data
 public class GameDay {
 
-    private Date date;
+    private String date;
 
     private Integer totalItems;
 
@@ -20,7 +21,8 @@ public class GameDay {
 
     private Integer totalGamesInProgress;
 
-    private List<Game> gameList;
+    @JsonProperty("games")
+    private List<MlbGame> games;
 
-    private List<Event> eventList;
+    private List<Event> events;
 }

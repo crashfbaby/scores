@@ -1,9 +1,8 @@
-package com.me.scores.model.mlb;
+package com.me.scores.model.baseball.mlb;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.nio.charset.Charset;
 import java.util.List;
 
 
@@ -19,5 +18,5 @@ public class Schedule {
     private Integer totalGamesInProgress;
 
     @JsonProperty("dates")
-    private List<GameDay> gameDays;
+    private List<GameDay> dates;
 }

@@ -1,19 +1,28 @@
 package com.me.scores.model;
 
+import com.me.scores.model.enums.Mascot;
+import lombok.Data;
+
+@Data
 public class Team {
 
     private Integer id;
 
-    private String abbrev;
-
-    private String location;
-
     private String name;
 
-    private String mascot;
+    private String season;
+
+    private String link;
+
+    private String abbreviation;
+
+    private String locationName;
+
+    private Mascot mascot;
 
     private String primaryColor;
 
     private String secondaryColor;
+
 
 }

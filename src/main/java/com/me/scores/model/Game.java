@@ -1,23 +1,39 @@
 package com.me.scores.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@EqualsAndHashCode
+import java.util.Date;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Game {
 
+    // Who's playin'?
+    @JsonProperty("teams.home")
+    private Team homeTeam;
+    @JsonProperty("teams.away")
+    private Team awayTeam;
+
+    // What're we playin'?
+    @JsonProperty("teams.home")
+    private Sport.name sport;
+
+    // When are we playin'?
+    private Date startTime;
 
     // Where we playin'?
     String locationId;
     String locationName;
 
-    //
-    // Who's playin'?
-    //
-    Team homeTeam;
-    Team awayTeam;
 
+    public Game(Team homeTeam, Team awayTeam, String locationName, Date startTime) {
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.locationName = locationName;
+        this.startTime = startTime;
+    }
 }

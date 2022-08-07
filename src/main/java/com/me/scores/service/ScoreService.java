@@ -1,6 +1,6 @@
 package com.me.scores.service;
 
-import com.me.scores.model.mlb.Schedule;
+import com.me.scores.model.baseball.mlb.Schedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

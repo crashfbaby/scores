@@ -1,7 +1,7 @@
 package com.me.scores.controller;
 
 import com.me.scores.entity.ScoreRequest;
-import com.me.scores.model.mlb.Schedule;
+import com.me.scores.model.baseball.mlb.Schedule;
 import com.me.scores.service.ScoreService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

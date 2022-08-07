@@ -1,15 +1,17 @@
 package com.me.scores.model;
 
-import com.me.scores.model.mlb.enums.Category;
+import com.me.scores.model.enums.Category;
+import lombok.Data;
 
 import java.util.List;
 
+public class Sport {
 
-public abstract class Sport {
+    public enum name {
+        BASEBALL, BASKETBALL, FOOTBALL, SOCCER;
+    }
 
-    public String name;
+    private static List<League> leagueList;
 
-    public List<League> leagueList;
-
-    List<Category> categoryList;
+    private List<Category> categoryList;
 }
