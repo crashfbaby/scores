@@ -1,16 +1,29 @@
 package com.me.scores.model.baseball.mlb;
 
-import com.me.scores.model.Team;
-import com.me.scores.model.baseball.BaseballGame;
+import lombok.Data;
 
 import java.util.Date;
 
-public class MlbGame extends BaseballGame {
+@Data
+public class MlbGame {
+
     private final Integer REGULATION_LENGTH = 9;
 
     private String gamePk;
 
-    public MlbGame(Team homeTeam, Team awayTeam, String locationName, Date startTime) {
-        super(homeTeam, awayTeam, locationName, startTime);
-    }
+    private String link;
+
+    private String gameType;
+
+    private String season;
+
+    private Date gameDate;
+
+    private String officialDate;
+
+    private MlbPlayingTeams teams;
+
+    //Object in MLB Response. Add if needed.
+    //private MLBStatus status;
+
 }
