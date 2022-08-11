@@ -1,12 +1,11 @@
 package com.me.scores.service;
 
 import com.me.scores.client.MlbClient;
+import com.me.scores.model.Sport;
 import com.me.scores.model.baseball.BaseballBoxScore;
 import com.me.scores.model.baseball.mlb.MlbSchedule;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
-
-import java.time.LocalDate;
 
 @Service
 public class BaseballService {
@@ -26,9 +25,13 @@ public class BaseballService {
     }
 
     public Mono<BaseballBoxScore> getBoxScoreForGame(String gameId) {
-        // TODO: Hardcoded box score to Phillies @ Mets game on 4/24/2019 (gamePk=565997):
+        // TODO: Phillies @ Mets game on 4/24/2019 (gamePk=565997):
         // String path = "v1/game/565997/boxscore";
         return null;
     }
+
+    //public Mono<BaseballPlayByPlay> getLiveMlbGameData(String gameId) {
+    // https://statsapi.mlb.com/api/v1.1/game/661049/feed/live
+    //}
 
 }

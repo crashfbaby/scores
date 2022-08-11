@@ -13,14 +13,11 @@ import java.util.Date;
 public class Game {
 
     // Who's playin'?
-    @JsonProperty("teams.home")
     private Team homeTeam;
-    @JsonProperty("teams.away")
     private Team awayTeam;
 
     // What're we playin'?
-    @JsonProperty("teams.home")
-    private Sport.name sport;
+    private Sport sport;
 
     // When are we playin'?
     private Date startTime;

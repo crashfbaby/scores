@@ -17,11 +17,17 @@ public class BaseballGame extends Game {
     @Builder(builderClassName = "ballgame")
     public BaseballGame(Team homeTeam, Team awayTeam, String locationName, Date startTime)  {
         super(homeTeam, awayTeam, locationName, startTime);
-        super.setSport(Sport.name.BASEBALL);
+        super.setSport(Sport.BASEBALL);
     }
 
     Integer currentInning;
     private Boolean isEnded;
+    private Integer homeRuns;
+    private Integer awayRuns;
     private Integer endInning;
+    private Integer outs;
+    private Integer balls;
+    private Integer strikes;
+    private String count;
 
 }
