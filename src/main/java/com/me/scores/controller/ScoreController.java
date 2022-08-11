@@ -29,11 +29,6 @@ public class ScoreController {
     public Mono<MlbSchedule> getScoreboard(String date, String sportId){
         // TODO: Split out into getScoreBoardForSport, "ForHomeTeam, "ForAwayTeam, "ForDate
         return scoreService.getScoreboard(date, sportId, null, null);
-//        String baseURL = "https://statsapi.mlb.com/api/";
-//        //String baseURL = "${app.service-calls.baseball-urls.mlb-url}";
-//        // TODO: Hardcoded box score to Phillies @ Mets game on 4/24/2019 (gamePk=565997):
-//        // TODO: Extract to generic client class
-//        String path = "v1/game/565997/boxscore";
     }
 
     // getBoxScore
