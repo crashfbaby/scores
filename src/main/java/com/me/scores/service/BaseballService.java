@@ -1,9 +1,12 @@
 package com.me.scores.service;
 
 import com.me.scores.client.MlbClient;
+import com.me.scores.client.ClientValues;
 import com.me.scores.model.Sport;
 import com.me.scores.model.baseball.BaseballBoxScore;
 import com.me.scores.model.baseball.mlb.MlbSchedule;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -20,8 +23,16 @@ public class BaseballService {
     }
 
     public Mono<MlbSchedule> getMlbScoresForDate(String date){
-        // TODO move all the logic hidden away in getScheduledGames(date,sportId) to here
-        return mlbClient.getScheduledGames(date, Integer.toString(1));
+
+        return mlbClient.get()
+                .uri(builder -> builder.path(ClientValues.API.V1_SCHEDULE)
+                        .queryParam(ClientValues.PARAM.DATE, date)
+                        .queryParam(ClientValues.PARAM.SPORT_ID, Sport.BASEBALL.getSportId())
+                        .build())
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .retrieve()
+                .bodyToMono(MlbSchedule.class);
+
     }
 
     public Mono<BaseballBoxScore> getBoxScoreForGame(String gameId) {

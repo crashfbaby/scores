@@ -13,14 +13,17 @@ public enum Sport {
     BASKETBALL("3", "{sport.name.basketball}"),
     SOCCER("4", "{sport.name.soccer}"); // This one has 2 entries. "Soccer" and "The rest of the world"
 
-    private String sportId;
+    private final String sportId;
 
-    // TODO: nameString for i18n
-    Sport(String sportId, String defaultLanguageString) {
+    private final String languageString;
+
+    Sport(String sportId, String languageString) {
+        this.sportId = sportId;
+        this.languageString = languageString;
     }
 
-    public String id() {
-        return this.sportId;
+    public String getSportId() {
+        return sportId;
     }
 
     public static Sport getById(String sportId) {
@@ -30,7 +33,9 @@ public enum Sport {
         return UNKNOWN;
     }
 
+    // TODO: Implement
     private static String leagues; //(e.g. BASEBALL(1, "MLB, NIPPON") )
 
+    // TODO: Implement
     private List<Category> categoryList;
 }

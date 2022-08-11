@@ -2,6 +2,7 @@ package com.me.scores.client;
 
 import com.me.scores.model.baseball.mlb.MlbSchedule;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -14,21 +15,54 @@ public class MlbClient {
     private final WebClient webClient;
 
     public MlbClient() {
+        super();
         this.webClient = WebClient.builder()
-                .baseUrl("https://statsapi.mlb.com/api")
+                .baseUrl(ClientValues.BASE_URL)
+                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }
+    
+    public WebClient.RequestHeadersUriSpec<?> get() {
+        return webClient.get();
+    }
 
-    // TODO: Make this a proper client class and move all  the path and param building upstream
-    // TODO: Change return type to BaseballGame. Map MlbSchedule to List of BaseballGame
-    public Mono<MlbSchedule> getScheduledGames(String date, String sportId) {
-        return webClient.get()
-                 .uri(builder -> builder.path("/v1/schedule")
-                                .queryParam("date", date)
-                                .queryParam("sportId", sportId)
-                                .build())
-                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                 .retrieve()
-                 .bodyToMono(MlbSchedule.class);
+    
+    public WebClient.RequestHeadersUriSpec<?> head() {
+        return webClient.head();
+    }
+
+    
+    public WebClient.RequestBodyUriSpec post() {
+        return webClient.post();
+    }
+
+    
+    public WebClient.RequestBodyUriSpec put() {
+        return webClient.put();
+    }
+
+    
+    public WebClient.RequestBodyUriSpec patch() {
+        return webClient.patch();
+    }
+
+    
+    public WebClient.RequestHeadersUriSpec<?> delete() {
+        return webClient.delete();
+    }
+
+    
+    public WebClient.RequestHeadersUriSpec<?> options() {
+        return webClient.options();
+    }
+
+    
+    public WebClient.RequestBodyUriSpec method(HttpMethod method) {
+        return webClient.method(method);
+    }
+
+    
+    public WebClient.Builder mutate() {
+        return webClient.mutate();
     }
 }
